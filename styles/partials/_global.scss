@@ -1,2 +1,130 @@
 @use './typography' as *;
 @use './breakpoints' as *;
+@use './colors' as *;
+
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "NunitoSans", sans-serif;
+}
+@mixin marginless{
+    margin: 0;
+}
+@mixin bold{
+    font-weight: 700;
+}
+
+button{
+    background-color: $BandSite-Black;
+    color: $White;
+
+    @include bold;
+    line-height: 1.25rem;
+
+    @include mobile{
+        font-size: .625rem;
+    }
+    @include desktop{
+        font-size: .75rem;
+    }
+
+    &:hover{
+        background-color: $BandSite-DarkBlack;
+        color: $White;
+    }
+}
+
+.hero-overlay{
+    background-color: $BandSite-Black;
+    opacity: 50%;
+}
+.footer__copy{
+    @include mobile{
+        font-size: .8125rem;
+        line-height: 1.125rem;
+    }
+
+    @include desktop{
+        font-size: .875rem;
+        line-height: 1.25rem;
+    }
+    
+    //style guide only has desktop bold
+    &--bold{
+        @include desktop{
+            @include bold;
+        }
+    }
+}
+
+.body__copy{
+    @include mobile{
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        // font-weight: 400;
+    }
+
+    @include desktop{
+        font-size: .875rem;
+        line-height: 1.375rem;
+        // font-weight: 400;
+    }
+
+    //style guide only has desktop bold
+    &--bold{
+        @include desktop{
+            @include bold;
+        }
+    }
+}
+
+.header{
+    background-color: $BandSite-Black;
+    color: $White;
+    
+    &__page{
+        @include mobile{
+            font-size: 1.5rem;
+            line-height: 2rem;
+            @include bold;
+
+        }
+        
+        @include desktop{
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            @include bold;
+
+        }
+    }
+
+    &__section{
+        @include mobile{
+            font-size: 1.5rem;
+            line-height: 2rem;
+            @include bold;
+        }
+
+        @include desktop{
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+            @include bold;
+        }
+    }
+
+    &__sub{
+        @include mobile{
+            font-size: .875rem;
+            line-height: 1.375rem;
+            font-weight: 600;
+        }
+
+        @include desktop{
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 500;
+        }
+    }
+}
