@@ -1,1 +1,107 @@
 @use './partials/global' as *;
+@use './partials/breakpoints' as *;
+@use './partials/colors' as *;
+
+h1{
+    @include marginless;
+    text-transform: uppercase;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+
+ul {
+    list-style-type: '';
+    padding: 0;
+}
+
+nav{
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+img{
+    @include mobile{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+footer{
+    background-color: $BandSite-Black;
+    color: $White;
+    display: flex;
+    @include mobile{
+        flex-direction: column;
+        padding: 0 0 0 1rem;
+        flex-wrap: wrap;
+    }
+}
+
+.bandsite{
+    @extend .header__page;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 2rem 0 0 0rem;
+}
+
+.flex--center{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.nav-bar{
+    @include tablet{
+        padding: 1.5rem 0 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+
+}
+.bottom{
+    display: flex;
+    @include mobile{
+        margin: 0rem 1rem 1rem 1rem;
+        justify-content: space-around;
+    }
+    @include tablet{
+        display: inline-flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        & p{
+            padding: 0 0.75rem 0 .75rem;
+        }
+    }
+
+}
+
+.title-splash{
+    background: hero-overlay("/assets/images/hero-bio.jpg");
+    padding: 5rem 5rem 5rem 1rem;
+    background-size: 100%;
+    color:white;
+}
+
+
+.about{
+    // top/bottom left/right
+    @include mobile{
+        margin: 0 1rem;
+    }
+
+}
+
+.photo-gallery{
+    @include mobile{
+
+    margin: 0 1rem 1rem 1rem;
+    background-color: $Alabaster;
+    }
+
+}
