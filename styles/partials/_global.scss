@@ -16,6 +16,21 @@ body{
     font-weight: 700;
 }
 
+.marginless{
+    @include marginless;
+}
+
+.bold{
+    @include bold;
+}
+.unbold{
+    font-weight: 400;
+}
+h2{
+    @include mobile{
+        margin: 1.5rem 0 1rem 0;
+    }
+}
 button{
     background-color: $BandSite-Black;
     color: $White;
@@ -36,10 +51,28 @@ button{
     }
 }
 
-.hero-overlay{
-    background-color: $BandSite-Black;
-    opacity: 50%;
+//usage: hero-overlay("/path-to-file/img.png");
+@function hero-overlay($image-url){
+    $gradient: linear-gradient(rgba($BandSite-Black, 0.5), rgba($BandSite-Black, 0.5));
+    @return $gradient, url($image-url);
 }
+
+.media{
+    @include mobile{
+        &__icon{
+            width: 2rem;
+            height: 2rem;
+            margin: 0.5rem;
+        }
+        display: inline-flex;
+        flex-direction: column;
+        &__icon-group{
+            
+        }
+    }
+}
+
+
 .footer__copy{
     @include mobile{
         font-size: .8125rem;
@@ -63,13 +96,13 @@ button{
     @include mobile{
         font-size: .8125rem;
         line-height: 1.125rem;
-        // font-weight: 400;
+
     }
 
     @include desktop{
         font-size: .875rem;
         line-height: 1.375rem;
-        // font-weight: 400;
+
     }
 
     //style guide only has desktop bold
@@ -101,6 +134,16 @@ button{
     }
 
     &__section{
+        &--bold-hover{
+            @include mobile{
+                font-size: 1.5rem;
+                line-height: 2rem;
+                &:hover{
+                    @include bold;
+                }
+            }
+
+        }
         @include mobile{
             font-size: 1.5rem;
             line-height: 2rem;
