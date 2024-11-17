@@ -79,6 +79,9 @@ footer{
     }
 
     @include tablet{
+        padding: 1.5rem 0 0 3rem;
+    }
+    @include desktop{
         padding: 1.5rem 0 0 9rem;
     }
 }
@@ -129,6 +132,44 @@ button{
     @return $gradient, url($image-url);
 }
 
+
+.nav-bar{
+    @include tablet{
+        padding-left: 9rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+    @include tablet{
+        padding: 1rem 0rem 1rem 3rem;
+    }
+
+}
+.bottom{
+    display: flex;
+    @include mobile{
+        margin: 0rem 1rem 1rem 1rem;
+        justify-content: space-around;
+    }
+    @include tablet{
+        display: inline-flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        & p{
+            padding: 0 0.75rem 0 3rem;
+        }
+    }
+
+    @include desktop{
+        display: inline-flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        & p{
+            padding: 0 0.75rem 0 3rem;
+        }
+    }
+}
 
 
 .media{
@@ -194,6 +235,11 @@ button{
         @include tablet{
             display: inline-flex;
             flex-direction: row;
+
+        }
+        @include desktop{
+            display: inline-flex;
+            flex-direction: row;
             gap: 5rem;
             align-items: flex-end;
         }
@@ -247,7 +293,12 @@ button{
             @include bold;
 
         }
-        
+        @include tablet{
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            @include bold;
+
+        }
         @include desktop{
             font-size: 3.75rem;
             line-height: 4.25rem;

@@ -2,41 +2,6 @@
 @use './partials/breakpoints' as *;
 @use './partials/colors' as *;
 
-
-
-
-
-
-.nav-bar{
-    @include tablet{
-        padding-left: 9rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: baseline;
-    }
-    @include tablet{
-        // padding: 1rem 0rem 1rem 9rem;
-    }
-
-}
-.bottom{
-    display: flex;
-    @include mobile{
-        margin: 0rem 1rem 1rem 1rem;
-        justify-content: space-around;
-    }
-    @include tablet{
-        display: inline-flex;
-        align-items: center;
-        margin-left: 1.5rem;
-        & p{
-            padding: 0 0.75rem 0 3rem;
-        }
-    }
-
-}
-
 .title-splash{
     background: hero-overlay("/assets/images/hero-bio.jpg");
     padding: 5rem 0rem 5rem 1rem;
@@ -46,6 +11,10 @@
         padding: 25% 0rem 25% 9rem;
 
     }
+    @include tablet{
+        padding: 33% 0rem 25% 3rem;
+
+    }
 }
 
 
@@ -53,6 +22,10 @@
     // top/bottom left/right
     @include mobile{
         margin: 0 1rem;
+    }
+
+    @include tablet{
+        margin: 0 3rem;
     }
 
     @include desktop{
