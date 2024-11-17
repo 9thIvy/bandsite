@@ -2,6 +2,21 @@
 @use './breakpoints' as *;
 @use './colors' as *;
 
+
+@mixin flex--center{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+      
+}
+
+@mixin marginless{
+    margin: 0;
+}
+@mixin bold{
+    font-weight: 700;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -9,12 +24,69 @@ body{
     margin: 0;
     font-family: "NunitoSans", sans-serif;
 }
-@mixin marginless{
-    margin: 0;
+ul {
+    list-style-type: '';
+    padding: 0;
+
+    @include tablet{
+        margin: 2rem 0rem;
+    }
 }
-@mixin bold{
-    font-weight: 700;
+
+h1{
+    @include marginless;
+    text-transform: uppercase;
+    line-height: 1.25rem;
+    font-weight: 400;
+    
+    @include desktop{
+        font-size: 1.5rem;
+    }
 }
+
+h2{
+    @include mobile{
+        margin: 1.5rem 0 1rem 0;
+    }
+}
+
+nav{
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+img{
+    @include mobile{
+        width: 100%;
+    }
+    @include tablet{
+        // width:75%;
+        
+    }
+}
+
+footer{
+    background-color: $BandSite-Black;
+    color: $White;
+    display: flex;
+    @include mobile{
+        flex-direction: column;
+        padding: 0 0 0 1rem;
+        flex-wrap: wrap;
+    }
+
+    @include tablet{
+        padding: 1.5rem 0 0 3rem;
+    }
+    @include desktop{
+        padding: 1.5rem 0 0 9rem;
+    }
+}
+
+
 
 .marginless{
     @include marginless;
@@ -26,11 +98,14 @@ body{
 .unbold{
     font-weight: 400;
 }
-h2{
-    @include mobile{
-        margin: 1.5rem 0 1rem 0;
-    }
+
+.flex--center{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
 }
+
 button{
     background-color: $BandSite-Black;
     color: $White;
@@ -57,6 +132,46 @@ button{
     @return $gradient, url($image-url);
 }
 
+
+.nav-bar{
+    @include tablet{
+        padding-left: 9rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+    @include tablet{
+        padding: 1rem 0rem 1rem 3rem;
+    }
+
+}
+.bottom{
+    display: flex;
+    @include mobile{
+        margin: 0rem 1rem 1rem 1rem;
+        justify-content: space-around;
+    }
+    @include tablet{
+        display: inline-flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        & p{
+            padding: 0 0.75rem 0 3rem;
+        }
+    }
+
+    @include desktop{
+        display: inline-flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        & p{
+            padding: 0 0.75rem 0 3rem;
+        }
+    }
+}
+
+
 .media{
     @include mobile{
         &__icon{
@@ -66,12 +181,24 @@ button{
         }
         display: inline-flex;
         flex-direction: column;
-        &__icon-group{
-            
+
+    }
+
+    &--mobile{
+        @include tablet{
+            display: none;
         }
     }
-}
 
+    &--tablet{
+        display: none;
+        @include tablet{
+            display: block;
+        }
+    }
+
+    
+}
 
 .footer__copy{
     @include mobile{
@@ -91,6 +218,48 @@ button{
         }
     }
 }
+
+.bandsite--mobile{
+        @extend .header__page;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin: 2rem 0 0 0rem;
+
+        @include tablet{
+            display: none;
+        }
+}
+
+.contact{
+    &__wrapper{
+        @include tablet{
+            display: inline-flex;
+            flex-direction: row;
+
+        }
+        @include desktop{
+            display: inline-flex;
+            flex-direction: row;
+            gap: 5rem;
+            align-items: flex-end;
+        }
+    }
+
+    &__group{
+        @include tablet{
+            display: inline-flex;
+            flex-direction: column;
+        }
+        &--hero{
+            display: none;
+            @include tablet{
+                display: inline-flex;
+                padding-left:9rem;
+            }
+        }
+    }
+}
+
 
 .body__copy{
     @include mobile{
@@ -124,7 +293,12 @@ button{
             @include bold;
 
         }
-        
+        @include tablet{
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            @include bold;
+
+        }
         @include desktop{
             font-size: 3.75rem;
             line-height: 4.25rem;
@@ -134,9 +308,18 @@ button{
     }
 
     &__section{
+        &--not-mobile{
+            display: none;
+            @include tablet{
+                display: block;
+                font-size: 2.25rem;
+                line-height: 2.75rem;
+                @include bold;
+            }
+        }
         &--bold-hover{
             @include mobile{
-                font-size: 1.5rem;
+                font-size: 1rem;
                 line-height: 2rem;
                 &:hover{
                     @include bold;
@@ -159,9 +342,11 @@ button{
 
     &__sub{
         @include mobile{
-            font-size: .875rem;
-            line-height: 1.375rem;
-            font-weight: 600;
+            // Style guide suggests the following,
+            // but looks incorrect on mobile
+            // font-size: .875rem;
+            // line-height: 1.375rem;
+            font-weight: 500;
         }
 
         @include desktop{
@@ -171,3 +356,4 @@ button{
         }
     }
 }
+

@@ -2,90 +2,19 @@
 @use './partials/breakpoints' as *;
 @use './partials/colors' as *;
 
-h1{
-    @include marginless;
-    text-transform: uppercase;
-    line-height: 1.25rem;
-    font-weight: 400;
-}
-
-ul {
-    list-style-type: '';
-    padding: 0;
-}
-
-nav{
-    @include mobile{
-        display: flex;
-        flex-direction: column;
-    }
-
-}
-
-img{
-    @include mobile{
-        width: 100%;
-        height: 100%;
-    }
-}
-
-footer{
-    background-color: $BandSite-Black;
-    color: $White;
-    display: flex;
-    @include mobile{
-        flex-direction: column;
-        padding: 0 0 0 1rem;
-        flex-wrap: wrap;
-    }
-}
-
-.bandsite{
-    @extend .header__page;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin: 2rem 0 0 0rem;
-}
-
-.flex--center{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
-}
-
-.nav-bar{
-    @include tablet{
-        padding: 1.5rem 0 1.5rem 1.5rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: baseline;
-    }
-
-}
-.bottom{
-    display: flex;
-    @include mobile{
-        margin: 0rem 1rem 1rem 1rem;
-        justify-content: space-around;
-    }
-    @include tablet{
-        display: inline-flex;
-        align-items: center;
-        margin-left: 1.5rem;
-        & p{
-            padding: 0 0.75rem 0 .75rem;
-        }
-    }
-
-}
-
 .title-splash{
     background: hero-overlay("/assets/images/hero-bio.jpg");
-    padding: 5rem 5rem 5rem 1rem;
+    padding: 5rem 0rem 5rem 1rem;
     background-size: 100%;
     color:white;
+    @include desktop{
+        padding: 25% 0rem 25% 9rem;
+
+    }
+    @include tablet{
+        padding: 33% 0rem 25% 3rem;
+
+    }
 }
 
 
@@ -95,13 +24,88 @@ footer{
         margin: 0 1rem;
     }
 
+    @include tablet{
+        margin: 0 3rem;
+    }
+
+    @include desktop{
+        margin: 0 9rem;
+    }
+
+    &__image{
+        @include desktop{
+            height: 30rem;
+        }
+    }
+
+    &__header{
+        @include desktop{
+            display: flex;
+            width: 100%;
+        }
+
+    }
+
+    &__section{
+        @include desktop{
+            margin: auto;
+            width: 75%;
+        }
+
+    }
+
+    &__quote{
+        @include desktop{
+            font-size: 1.25rem;
+        }
+    }
+
+    &__quote--source{
+        @include desktop{
+            font-weight: 400;
+        }
+    }
+}
+
+.sideBySide{
+    @include desktop{
+        display: flex;
+    
+        & > p{
+            margin: 0 .75rem;
+        }
+    }
 }
 
 .photo-gallery{
     @include mobile{
 
-    margin: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
     background-color: $Alabaster;
+    }
+    @include desktop{
+        display: flex;
+        margin: 0;
+        padding: 2rem 9rem 0 9rem;
+        
+    }
+
+    &__images{
+        @include tablet{
+            justify-content: center;
+            display:flex;
+            flex-wrap: wrap;
+        }
+
+
+    }
+
+    &__image{
+        @include tablet{
+            padding: 0.5rem 1rem 0.5rem 0;
+            width: 30%;
+            height: auto;
+        }
     }
 
 }
