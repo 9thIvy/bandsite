@@ -2,13 +2,6 @@
 @use './partials/breakpoints' as *;
 @use './partials/colors' as *;
 
-
-
-
-
-
-
-
 .title-splash{
     background: hero-overlay("/assets/images/hero-bio.jpg");
     padding: 5rem 0rem 5rem 1rem;
@@ -18,6 +11,10 @@
         padding: 25% 0rem 25% 9rem;
 
     }
+    @include tablet{
+        padding: 33% 0rem 25% 3rem;
+
+    }
 }
 
 
@@ -25,6 +22,10 @@
     // top/bottom left/right
     @include mobile{
         margin: 0 1rem;
+    }
+
+    @include tablet{
+        margin: 0 3rem;
     }
 
     @include desktop{
