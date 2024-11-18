@@ -5,16 +5,32 @@
 iframe{
     padding: 1rem 1rem 1rem 0;
     flex-shrink: 1;
+    width: 50%;
 }
 
 button{
     @include mobile{
         width: 100%;
     }
+    @include tablet{
+        width: auto;
+    }
 }
 
 .horizontal{
-    display: flex;
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+    }
+    @include tablet{
+
+        padding-left: 9rem;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 3rem;
+    }
+
 
 }
 
@@ -33,11 +49,45 @@ button{
     @include mobile{
         display: flex;
         flex-direction: column;
-        margin: auto 1rem auto 1rem;
+        margin: auto 1rem 1rem 1rem;
     }
 
+    @include tablet{
+        margin-left: 9rem;
+        display:flex;
+        flex-wrap: wrap;
+    }
+
+    // &__listing{
+    //     display: flex;
+    // }
+
+    &__meta-bar{
+        @include tablet{
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+    }
     &__meta-name{
         color: $Silver;
         text-transform: uppercase;
+        &--tablet{
+            color: $Silver;
+            text-transform: uppercase;
+        }
     }
+
+
+    &__meta-date{
+        font-weight: 700;
+        text-transform: uppercase;
+        &--tablet{
+            font-weight: 700;
+            text-transform: uppercase;
+
+
+        }
+    }
+
 }
