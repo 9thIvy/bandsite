@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/bio.css">
+    <link rel="stylesheet" href="/styles/bio.css">
+    <script src="/styles/scripts/index-page.js" defer></script>
     <title>BandSite</title>
 </head>
 <body>
-
     <header class="header">
         <nav class="nav-bar">
             <ul class="top">
@@ -17,10 +17,14 @@
             </ul>
             <ul class="bottom">
                 <li>
-                    <p class="marginless header__section--bold-hover">Biography</p>
+                    <a href="/index.html">
+                        <p class="marginless header__section--bold-hover">Biography</p>
+                    </a>
                 </li>
                 <li>
-                    <p class="marginless header__section--bold-hover">Shows</p>
+                    <a href="/pages/shows.html">
+                        <p class="marginless header__section--bold-hover">Shows</p>
+                    </a>
                     
                 </li>
             </ul>
@@ -73,6 +77,48 @@
                 <img class="photo-gallery__image" src="/assets/images/Photo-gallery-6.jpg">
             </div>
         </article>
+    </section>
+    <section class="comment-section">
+        <h2 class="header__section">Join the Conversation</h2>
+        <div class="comment-section__horizontal-flex">
+            <img class="comment-section__user-icon" src="/assets/images/Mohan-muruge.jpg">
+            <form class="comment-section__form">
+
+                <label for="user-name">Name</label>
+                <input class="comment-section__user-input" type="text" id="user-name" placeholder="Enter your name">
+
+                <label for="user-content">Comment</label>
+                <input id="comment-box" class="comment-section__user-input--comment-box" type="text" placeholder="Add a new comment">
+                <div class="button-box">
+                    <button id="submit" type="submit" class="comment-section__submit-button">Comment</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="comment-section__comment">
+            <hr>
+            <div class="comment-section__comment-meta">
+                <p class="comment-section__user-name">Victor Pinto</p>
+                <p class="date">11/02/2023</p>
+            </div>
+            <p class="comment-section__comment-content">This is art. This is inexplicable magic expressed in the purist way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.</p>
+        </div>
+        <div class="comment-section__comment">
+            <hr>
+            <div class="comment-section__comment-meta">
+                <p class="comment-section__user-name">Christina Cabera</p>
+                <p class="date">10/28/2023</p>
+            </div>
+            <p class="comment-section__comment-content">I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.</p>
+        </div>
+        <div class="comment-section__comment">
+            <hr>
+            <div class="comment-section__comment-meta">
+                <p class="comment-section__user-name">Isaac Tadesse</p>
+                <p class="date">10/20/2023</p>
+            </div>
+            <p class="comment-section__comment-content">I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.</p>
+        </div>
     </section>
     <footer>
         

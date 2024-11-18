@@ -33,6 +33,12 @@ ul {
     }
 }
 
+a{
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
 h1{
     @include marginless;
     text-transform: uppercase;
@@ -86,7 +92,9 @@ footer{
     }
 }
 
-
+hr{
+    border-color: $Mercury;
+}
 
 .marginless{
     @include marginless;
@@ -107,6 +115,10 @@ footer{
 }
 
 button{
+    height: 2.25rem;
+    text-transform: uppercase;
+    border-radius: 4px;
+
     background-color: $BandSite-Black;
     color: $White;
 
@@ -114,7 +126,7 @@ button{
     line-height: 1.25rem;
 
     @include mobile{
-        font-size: .625rem;
+        font-size: 1rem;
     }
     @include desktop{
         font-size: .75rem;
@@ -171,6 +183,36 @@ button{
     }
 }
 
+
+.nav-bar{
+    @include tablet{
+        padding-left: 9rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+    }
+    @include tablet{
+        // padding: 1rem 0rem 1rem 9rem;
+    }
+
+}
+.bottom{
+    display: flex;
+    @include mobile{
+        margin: 0rem 1rem 1rem 1rem;
+        justify-content: space-around;
+    }
+    @include tablet{
+        display: inline-flex;
+        align-items: center;
+        margin-left: 1.5rem;
+        & p{
+            padding: 0 0.75rem 0 3rem;
+        }
+    }
+
+}
 
 .media{
     @include mobile{
@@ -356,4 +398,3 @@ button{
         }
     }
 }
-

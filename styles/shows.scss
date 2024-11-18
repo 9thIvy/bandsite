@@ -1,0 +1,43 @@
+@use './partials/global' as *;
+@use './partials/breakpoints' as *;
+@use './partials/colors' as *;
+
+iframe{
+    padding: 1rem 1rem 1rem 0;
+    flex-shrink: 1;
+}
+
+button{
+    @include mobile{
+        width: 100%;
+    }
+}
+
+.horizontal{
+    display: flex;
+
+}
+
+.title-splash{
+    background: hero-overlay("/assets/images/Photo-gallery-3.jpg");
+    padding:2rem 0rem 2rem 1rem;
+    background-size: 100%;
+    color:white;
+    @include desktop{
+        padding: 25% 1rem 25% 9rem;
+
+    }
+}
+
+.shows{
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        margin: auto 1rem auto 1rem;
+    }
+
+    &__meta-name{
+        color: $Silver;
+        text-transform: uppercase;
+    }
+}

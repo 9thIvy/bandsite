@@ -109,3 +109,116 @@
     }
 
 }
+
+.comment-section{
+    display: flex;
+    flex-direction: column;
+    @include mobile{
+        margin: 0 1rem 1rem 1rem;
+    }
+
+    &__user-input{
+        @include mobile{
+
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+
+    &__horizontal-flex{
+        @include mobile{
+            display: flex;
+            justify-content: center;
+            
+        }
+    }
+
+    &__user-icon{
+        border-radius: 50%;
+        @include mobile{
+            margin: 1.5rem 1rem 0 0;
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+    }
+
+    &__user-input{
+        padding: 1rem;
+        background-color: $Alabaster;
+        border: thin;
+        border-style: solid;
+        border-color: $Mercury;
+        width: 100%;
+        border-radius: 4%;
+        @include mobile{
+            padding: .75rem;
+            margin-bottom: 1rem;
+        }
+
+        &--comment-box{
+            padding: 1rem;
+            background-color: $Alabaster;
+            border: thin;
+            border-style: solid;
+            border-color: $Mercury;
+            width: 100%;
+            border-radius: 4%;
+            @include mobile{
+                padding-bottom: 3.5rem;
+                margin-bottom: 1rem;
+            }
+
+        }
+
+
+
+        &:active{
+            border-color: $BandSite-Black;
+        }
+
+        &--error{
+            border-color: $Error;
+        }
+    }
+
+    &__submit-button{
+        @include mobile{
+            width: 100%;
+        }
+        @include tablet{
+            width: auto;
+            
+        }
+        
+    }
+
+    &__comment{
+        @include tablet{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &-meta{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+label{
+    margin: .25rem;
+    color: $Silver;
+    @include mobile{
+        font-size: .625rem ;
+    }
+    @include tablet{
+        font-size: 0.75rem;
+    }
+}
+
+.button-box{
+    display: flex;
+    justify-content: flex-end;
+}
