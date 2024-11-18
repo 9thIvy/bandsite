@@ -7,35 +7,7 @@
 
 
 
-.nav-bar{
-    @include tablet{
-        padding-left: 9rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: baseline;
-    }
-    @include tablet{
-        // padding: 1rem 0rem 1rem 9rem;
-    }
 
-}
-.bottom{
-    display: flex;
-    @include mobile{
-        margin: 0rem 1rem 1rem 1rem;
-        justify-content: space-around;
-    }
-    @include tablet{
-        display: inline-flex;
-        align-items: center;
-        margin-left: 1.5rem;
-        & p{
-            padding: 0 0.75rem 0 3rem;
-        }
-    }
-
-}
 
 .title-splash{
     background: hero-overlay("/assets/images/hero-bio.jpg");
@@ -138,8 +110,10 @@
 }
 
 .comment-section{
+    display: flex;
+    flex-direction: column;
     @include mobile{
-        margin: 0 0 0 1rem;
+        margin: 0 1rem 1rem 1rem;
     }
 
     &__user-input{
@@ -150,11 +124,11 @@
         }
     }
 
+
     &__horizontal-flex{
         @include mobile{
             display: flex;
             justify-content: center;
-            flex-grow: 1;
             
         }
     }
@@ -162,6 +136,7 @@
     &__user-icon{
         border-radius: 50%;
         @include mobile{
+            margin: 1.5rem 1rem 0 0;
             width: 2.25rem;
             height: 2.25rem;
         }
@@ -176,8 +151,26 @@
         width: 100%;
         border-radius: 4%;
         @include mobile{
-            padding: .75rem
+            padding: .75rem;
+            margin-bottom: 1rem;
         }
+
+        &--comment-box{
+            padding: 1rem;
+            background-color: $Alabaster;
+            border: thin;
+            border-style: solid;
+            border-color: $Mercury;
+            width: 100%;
+            border-radius: 4%;
+            @include mobile{
+                padding-bottom: 3.5rem;
+                margin-bottom: 1rem;
+            }
+
+        }
+
+
 
         &:active{
             border-color: $BandSite-Black;
@@ -189,10 +182,29 @@
     }
 
     &__submit-button{
-        flex-grow: 1;
-        width: 100%;
+        @include mobile{
+            width: 100%;
+        }
+        @include tablet{
+            width: auto;
+            
+        }
+        
+    }
+
+    &__comment{
+        @include tablet{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        &-meta{
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
+
 
 label{
     margin: .25rem;
@@ -205,6 +217,7 @@ label{
     }
 }
 
-input{
-
+.button-box{
+    display: flex;
+    justify-content: flex-end;
 }
