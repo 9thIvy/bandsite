@@ -136,3 +136,75 @@
     }
 
 }
+
+.comment-section{
+    @include mobile{
+        margin: 0 0 0 1rem;
+    }
+
+    &__user-input{
+        @include mobile{
+
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__horizontal-flex{
+        @include mobile{
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            
+        }
+    }
+
+    &__user-icon{
+        border-radius: 50%;
+        @include mobile{
+            width: 2.25rem;
+            height: 2.25rem;
+        }
+    }
+
+    &__user-input{
+        padding: 1rem;
+        background-color: $Alabaster;
+        border: thin;
+        border-style: solid;
+        border-color: $Mercury;
+        width: 100%;
+        border-radius: 4%;
+        @include mobile{
+            padding: .75rem
+        }
+
+        &:active{
+            border-color: $BandSite-Black;
+        }
+
+        &--error{
+            border-color: $Error;
+        }
+    }
+
+    &__submit-button{
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
+label{
+    margin: .25rem;
+    color: $Silver;
+    @include mobile{
+        font-size: .625rem ;
+    }
+    @include tablet{
+        font-size: 0.75rem;
+    }
+}
+
+input{
+
+}
