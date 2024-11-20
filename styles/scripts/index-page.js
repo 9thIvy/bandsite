@@ -11,8 +11,9 @@ form.addEventListener('submit', (event) => {
     const userName = document.getElementById('user-name').value.trim();
     const commentContent = document.getElementById('comment-box').value.trim();
 
+    
+
     if(userName === ""){
-        console.log("empty");
         document.getElementById('user-name').style.borderColor = errorColor;
         return;
     }
