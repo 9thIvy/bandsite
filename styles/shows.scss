@@ -53,28 +53,45 @@ button{
     }
 
     @include tablet{
-        margin-left: 9rem;
-        display:flex;
+        margin-left: 6rem;
         flex-wrap: wrap;
     }
-
-    // &__listing{
-    //     display: flex;
-    // }
+    @include desktop{
+        margin-left: 9rem;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        
+    }
 
     &__meta-bar{
+        @include mobile{
+            display: none;
+
+        }
         @include tablet{
             display: flex;
             align-items: baseline;
             justify-content: space-between;
+            @include tablet{
+                & > *{flex: 1;}
+            }
+
+            
         }
     }
     &__meta-name{
         color: $Silver;
         text-transform: uppercase;
+
+        @include tablet{
+            display: none;
+        }
+
         &--tablet{
             color: $Silver;
             text-transform: uppercase;
+            flex: 1;
+            display: block;
         }
     }
 
@@ -85,8 +102,22 @@ button{
         &--tablet{
             font-weight: 700;
             text-transform: uppercase;
+            flex: 1;
+            display: block;
+        }
+    }
 
+    &__wrapper{
+        @include desktop{
+            flex-grow: 1;
+        }
+    }
 
+    &__listing{
+        @include tablet{
+            display: flex;
+            justify-content: space-between;
+            & > *{flex: 1;}
         }
     }
 
