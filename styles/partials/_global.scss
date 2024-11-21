@@ -277,6 +277,8 @@ button{
         @include tablet{
             display: inline-flex;
             flex-direction: row;
+            align-items: flex-end;
+            gap: 1rem;
 
         }
         @include desktop{
