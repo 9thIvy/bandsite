@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/shows.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/styles/scripts/build-shows-page.js" defer></script>
+    <script type="module" src="/styles/scripts/band-site-api.js" defer></script>
+    <script type="module" src="/styles/scripts/build-shows-page.js" defer></script>
     <title>Shows</title>
 </head>
 <body>
@@ -52,9 +53,9 @@
                     <div></div>
                 </div>
                 
-                <div class="shows__list">
+                <div id="shows__list" class="shows__list">
     
-                    <div class="shows__listing">
+                    <!-- <div class="shows__listing">
                         <p class="shows__meta-name">date</p>
                         <p class="shows__meta-date">Mon Sept 09 2024</p>
                         <p class="shows__meta-name">venue</p>
@@ -107,7 +108,7 @@
                         <p class="shows__meta-location">San Francisco, CA</p>
                         <button type="button">Buy Tickets</button>
                     </div>
-                    <hr class="shows__divider">
+                    <hr class="shows__divider"> -->
                 </div>
             </div>
             

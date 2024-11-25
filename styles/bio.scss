@@ -212,7 +212,7 @@
         }
     }
 
-    &__list{
+    &__container{
         @include tablet{
             display: flex;
             align-items: center;
