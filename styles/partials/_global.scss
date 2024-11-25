@@ -90,10 +90,12 @@ footer{
     @include desktop{
         padding: 1.5rem 0 0 9rem;
     }
+
+
 }
 
 hr{
-    border-color: $Mercury;
+    border: 1px solid $Mercury;
 }
 
 .marginless{
@@ -169,7 +171,7 @@ button{
         align-items: center;
         margin-left: 1.5rem;
         & p{
-            padding: 0 0.75rem 0 3rem;
+            margin: 0 0.75rem 0 3rem;
         }
     }
 
@@ -178,7 +180,7 @@ button{
         align-items: center;
         margin-left: 1.5rem;
         & p{
-            padding: 0 0.75rem 0 3rem;
+            margin: 0 0.75rem 0 3rem;
         }
     }
 }
@@ -208,7 +210,7 @@ button{
         align-items: center;
         margin-left: 1.5rem;
         & p{
-            padding: 0 0.75rem 0 3rem;
+            margin: 0 0.75rem 0 3rem;
         }
     }
 
@@ -236,6 +238,12 @@ button{
         display: none;
         @include tablet{
             display: block;
+        }
+    }
+
+    &__icon-group{
+        @include tablet{
+            margin: 0rem 0 0.5rem 0;
         }
     }
 
@@ -297,8 +305,8 @@ button{
         &--hero{
             display: none;
             @include tablet{
+                margin: 2rem 2rem 0 0;
                 display: inline-flex;
-                padding-left:9rem;
             }
         }
     }
@@ -338,7 +346,7 @@ button{
 
         }
         @include tablet{
-            font-size: 3.75rem;
+            font-size: 2.75rem;
             line-height: 4.25rem;
             @include bold;
 
@@ -361,11 +369,20 @@ button{
                 @include bold;
             }
         }
+        &--current{
+            @include mobile{
+                font-size: 1rem;
+                line-height: 2rem;
+                border-bottom: 1px solid $White;
+                @include bold;
+            }
+        }
         &--bold-hover{
             @include mobile{
                 font-size: 1rem;
                 line-height: 2rem;
                 &:hover{
+                    border-bottom: 1px solid $White;
                     @include bold;
                 }
             }
@@ -398,5 +415,15 @@ button{
             line-height: 2rem;
             font-weight: 500;
         }
+    }
+}
+
+
+
+.footer__wrapper{
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        width: 100%
     }
 }

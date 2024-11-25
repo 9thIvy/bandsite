@@ -3,10 +3,18 @@
 @use './partials/colors' as *;
 
 iframe{
-    padding: 1rem 1rem 1rem 0;
-    flex-shrink: 1;
-    width: 50%;
-}
+
+    @include mobile{
+        padding: 1rem 1rem 1rem 0;
+        flex-shrink: 1;
+        width: 100%;
+    }
+    @include tablet{
+        padding: 1rem 1rem 1rem 0;
+        flex-shrink: 1;
+        width: 50%;
+    }
+    }
 
 button{
     @include mobile{
@@ -24,7 +32,15 @@ button{
     }
     @include tablet{
 
-        padding-left: 9rem;
+        padding-left: 3rem;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 3rem;
+    }
+    @include desktop{
+
+        padding-left: 0rem;
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -37,7 +53,7 @@ button{
 .title-splash{
     background: hero-overlay("/assets/images/Photo-gallery-3.jpg");
     padding:2rem 0rem 2rem 1rem;
-    background-size: 100%;
+    background-size: cover;
     color:white;
     @include desktop{
         padding: 25% 1rem 25% 9rem;
