@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/bio.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/styles/scripts/index-page.js" defer></script>
     <title>BandSite</title>
 </head>
@@ -20,7 +21,7 @@
             <ul class="bottom">
                 <li>
                     <a href="/index.html">
-                        <p class="marginless header__section--bold-hover">Biography</p>
+                        <p class="marginless header__section--current">Biography</p>
                     </a>
                 </li>
                 <li>
@@ -97,116 +98,121 @@
             </form>
         </div>
 
-        <div class="comment-section__comment">
-            <hr>
-            <div class="comment-section__comment-meta">
-                <p class="comment-section__user-name">Victor Pinto</p>
-                <p class="date">11/02/2023</p>
-            </div>
-            <p class="comment-section__comment-content">This is art. This is inexplicable magic expressed in the purist way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.</p>
-        </div>
-        <div class="comment-section__comment">
-            <hr>
-            <div class="comment-section__comment-meta">
-                <p class="comment-section__user-name">Christina Cabera</p>
-                <p class="date">10/28/2023</p>
-            </div>
-            <p class="comment-section__comment-content">I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.</p>
-        </div>
-        <div class="comment-section__comment">
-            <hr>
-            <div class="comment-section__comment-meta">
-                <p class="comment-section__user-name">Isaac Tadesse</p>
-                <p class="date">10/20/2023</p>
-            </div>
-            <p class="comment-section__comment-content">I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.</p>
-        </div>
-    </section>
-    <footer>
-        
-        <div class="media--mobile">
-            <h2 class="header__section">Get in Touch</h2>
-            <div>
-                <a href="https://instagram.com">
-                    <img class="media__icon" src="/assets/icons/Icon-instagram.svg">
-                </a>
-                <a href="https://facebook.com">
-                    <img class="media__icon" src="/assets/icons/Icon-facebook.svg">
-                </a>
-                <a href="https://twitter.com">
-                    <img class="media__icon" src="/assets/icons/Icon-twitter.svg">
-                </a>
-            </div>
-        </div>
-        <div>
-            <div class="contact__wrapper">
-                <div class="contact__group">
-                    <h2 class="header__section--not-mobile">Get in Touch</h2>
-                    <h3 class="contact__name">The Bees Knees Management</h3>
-                    <p class="marginless">
-                        503 Broadway Penthouse,
-                    </p>
-                    <p class="marginless">
-                        New York, NY 10012, USA
-                    </p>
-                    <p class="contact__email">
-                        info@thebeesknees.com
-                    </p>
-                </div>
-                <div class="contact__group">
-                    <div class="media--tablet">
-                        <div>
-                            <a href="https://instagram.com">
-                                <img class="media__icon" src="/assets/icons/Icon-instagram.svg">
-                            </a>
-                            <a href="https://facebook.com">
-                                <img class="media__icon" src="/assets/icons/Icon-facebook.svg">
-                            </a>
-                            <a href="https://twitter.com">
-                                <img class="media__icon" src="/assets/icons/Icon-twitter.svg">
-                            </a>
-                        </div>
+        <div class="comment-section__list">
+            <div class="comment-section__comment">
+                <hr>
+                <div class="comment-section__icon-wrapper">
+                    <img class="comment-section__user-icon" src="/assets/images/Mohan-muruge.jpg">
+                <div>
+                    <div class="comment-section__comment-meta">
+                        <p class="comment-section__user-name">Victor Pinto</p>
+                        <p class="date">11/02/2023</p>
                     </div>
-                    <h3 class="contact__name">Limitless Art Group</h3>
-                    <p class="marginless">
-                        Booking Agent for
-                    </p>
-                    <p class="marginless">
-                        US / South America / Japan
-                    </p>
-                    <p class="contact__email">
-                        bookings@limitlessag.com
-                    </p>
-                   
+                        <p class="comment-section__comment-content">This is art. This is inexplicable magic expressed in the purist way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.</p>
                 </div>
-                <div class="contact__group">
-                    <h3 class="contact__name">ARCH Entertainment</h3>
-                    <p class="marginless">
-                        Booking Agent for
-                    </p>
-                    <p class="marginless">
-                        UK / EU / AU
-                    </p>
-                    
-                    <p class="contact__email">
-                        bookings@archentertainment.com
-                    </p>
-                   
+            </div>
+        </div>
+            <div class="comment-section__comment">
+                <hr>
+                <div class="comment-section__comment-meta">
+                    <p class="comment-section__user-name">Christina Cabera</p>
+                    <p class="date">10/28/2023</p>
                 </div>
-                <p class="bandsite--mobile">
-                    BandSite
-                </p>
-
+                <p class="comment-section__comment-content">I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.</p>
             </div>
-            <div class="contact__group--hero">
-                <h1>BandSite</h1>
+            <div class="comment-section__comment">
+                <hr>
+                <div class="comment-section__comment-meta">
+                    <p class="comment-section__user-name">Isaac Tadesse</p>
+                    <p class="date">10/20/2023</p>
+                </div>
+                <p class="comment-section__comment-content">I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.</p>
             </div>
-
-                <p>Copyright The Bees Knees © 2023 All Rights Reserved</p>
+        </section>
+        </div>
+        <footer>
+            <div class="media--mobile">
+                <h2 class="header__section">Get in Touch</h2>
+                <div class="media__icon-group">
+                    <a href="https://instagram.com">
+                        <img class="media__icon" src="/assets/icons/Icon-instagram.svg">
+                    </a>
+                    <a href="https://facebook.com">
+                        <img class="media__icon" src="/assets/icons/Icon-facebook.svg">
+                    </a>
+                    <a href="https://twitter.com">
+                        <img class="media__icon" src="/assets/icons/Icon-twitter.svg">
+                    </a>
+                </div>
             </div>
-
+            <div class="footer__wrapper">
+                <div class="contact__wrapper">
+                    <div class="contact__group">
+                        <h2 class="header__section--not-mobile">Get in Touch</h2>
+                        <h3 class="contact__name">The Bees Knees Management</h3>
+                        <p class="marginless">
+                            503 Broadway Penthouse,
+                        </p>
+                        <p class="marginless">
+                            New York, NY 10012, USA
+                        </p>
+                        <p class="contact__email">
+                            info@thebeesknees.com
+                        </p>
         
-    </footer>
+                    </div>
+                    <div class="contact__group">
+                        <div class="media--tablet">
+                            <div class="media__icon-group">
+                                <a href="https://instagram.com">
+                                    <img class="media__icon" src="/assets/icons/Icon-instagram.svg">
+                                </a>
+                                <a href="https://facebook.com">
+                                    <img class="media__icon" src="/assets/icons/Icon-facebook.svg">
+                                </a>
+                                <a href="https://twitter.com">
+                                    <img class="media__icon" src="/assets/icons/Icon-twitter.svg">
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="contact__name">Limitless Art Group</h3>
+                        <p class="marginless">
+                            Booking Agent for
+                        </p>
+                        <p class="marginless">
+                            US / South America / Japan
+                        </p>
+                        <p class="contact__email">
+                            bookings@limitlessag.com
+                        </p>
+                       
+                    </div>
+                    <div class="contact__group">
+                        <h3 class="contact__name">ARCH Entertainment</h3>
+                        <p class="marginless">
+                            Booking Agent for
+                        </p>
+                        <p class="marginless">
+                            UK / EU / AU
+                        </p>
+                        
+                        <p class="contact__email">
+                            bookings@archentertainment.com
+                        </p>
+                       
+                    </div>
+                    <p class="bandsite--mobile">
+                        BandSite
+                    </p>
+                </div>
+                <div class="contact__group--hero">
+                    <h1>BandSite</h1>
+                </div>
+            </div>
+            <p>Copyright The Bees Knees © 2023 All Rights Reserved</p>
+    
+            
+        </footer> 
 </body>
 </html>
 

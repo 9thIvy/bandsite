@@ -113,6 +113,12 @@
 .comment-section{
     display: flex;
     flex-direction: column;
+
+    &__icon-wrapper{
+        @include mobile{
+            display:flex;
+        }
+    }
     @include mobile{
         margin: 0 1rem 1rem 1rem;
     }
@@ -198,10 +204,19 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            width: 50%;
         }
         &-meta{
             display: flex;
             justify-content: space-between;
+        }
+    }
+
+    &__list{
+        @include tablet{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
         }
     }
 }
@@ -222,3 +237,4 @@ label{
     display: flex;
     justify-content: flex-end;
 }
+
